@@ -1,6 +1,6 @@
-#This is a ubumtu 18:04 Image 
+#This is a ubumtu 18:04 Image
 FROM ubuntu:18.04
-MAINTAINER rashbits@gmail.com 
+MAINTAINER rashbits@gmail.com
 
 # Installing dependencies and java version 8
 RUN apt-get update && \
@@ -15,10 +15,14 @@ RUN apt-get update && \
 CMD ["echo",  "cat >> /etc/environment <<EOL"]
 
 # Making directory /var/datanext
-RUN mkdir /var/datanext
+RUN mkdir /var/DataFlowService
 
 # Copying file from target folder to above created folder
-COPY ./target/original-engine-bundled.jar /var/datanext/original-engine-bundled.jar
+COPY ./DataFlowService /var/DataFlowService
+
+#Using Maven to build jar
+WORKDIR /var/DataFlowService
+CMD mvn package
 
 # running .jar file
-CMD java -jar /var/datanext/original-engine-bundled.jar
+CMD java -jar /var/DataFlowService/target/original-engine-bundled.jar
