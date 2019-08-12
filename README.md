@@ -28,6 +28,25 @@ docker stop <CONTAINER-NAME>
 docker inspect <containerNameOrId> | grep '"IPAddress"' | head -n 1
 ```
 ---
+### Removing Docker Images
+
+#### Remove one or more specific images
+
+Use the `docker images` command with the `-a` flag to locate the ID of the images you want to remove. This will show you every image, including intermediate image layers. When you've located the images you want to delete, you can pass their ID or tag to `docker rmi`:
+
+##### List:
+
+```
+docker images -a
+```
+
+##### Remove:
+
+```
+docker rmi Image Image
+
+```
+---
 ### Remove all images
 
 All the Docker images on a system can be listed by adding `-a` to the `docker images` command. Once you're sure you want to delete them all, you can add the `-q` flag to pass the Image ID to `docker rmi`:
@@ -50,16 +69,25 @@ docker rmi $(docker images -a -q)
 
 Use the `docker ps` command with the `-a` flag to locate the name or ID of the containers you want to remove:
 
-List:
+##### List:
 
 ```
 docker ps -a
 ```
 
-Remove:
+##### Remove:
 ```
 docker rm ID_or_Name ID_or_Name
 ```
+---
+### Entering Linux based container docker image
+
+`docker exec -it container_name bash`
+
+---
+### Know Java version
+`docker exec container_name java -version`
+
 ---
 ## How to write Dockerfile
 
