@@ -28,6 +28,11 @@ docker stop <CONTAINER-NAME>
 docker inspect <containerNameOrId> | grep '"IPAddress"' | head -n 1
 ```
 ---
+### To run a Docker on port
+```
+docker run -p <HOST-PORT>:<DOCKER-PORT> <IMAGE-NAME>
+```
+---
 ### Removing Docker Images
 
 #### Remove one or more specific images
