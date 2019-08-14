@@ -1,5 +1,5 @@
 #This is a phusion/baseimage:0.11 Image
-FROM ubuntu:18.04
+FROM phusion/baseimage:0.11
 MAINTAINER rashbits@gmail.com
 
 # Installing dependencies and java version 8
