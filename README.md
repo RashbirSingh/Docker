@@ -28,7 +28,7 @@ docker stop <CONTAINER-NAME>
 docker inspect <containerNameOrId> | grep '"IPAddress"' | head -n 1
 ```
 ---
-### To run a Docker on port
+### To access docker port from local machine and outside machines
 ```
 docker run -p <HOST-PORT>:<DOCKER-PORT> <IMAGE-NAME>
 ```
