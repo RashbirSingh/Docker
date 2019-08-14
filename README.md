@@ -1,7 +1,7 @@
 ### To create a docker image
 1) Create a file with name `Dockerfile` : case sensitive
 2) Run command `docker build . -t <TAG-NAME-FOR-IMAGE>`
-	Example -  `docker build . -t test`
+	Example - `docker build . -t test`
 ---
 ### To know list of docker images
 ```
