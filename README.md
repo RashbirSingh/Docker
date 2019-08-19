@@ -28,6 +28,11 @@ docker stop <CONTAINER-NAME>
 docker inspect <containerNameOrId> | grep '"IPAddress"' | head -n 1
 ```
 ---
+### To SSH into the docker container
+```
+docker exec -it <CONTAINER ID> /bin/bash
+```
+---
 ### To access docker port from local machine and outside machines
 ```
 docker run -p <HOST-PORT>:<DOCKER-PORT> <IMAGE-NAME>
